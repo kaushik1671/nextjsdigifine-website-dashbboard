@@ -9,12 +9,15 @@ export default function AdminSidebar({ handleLogout }) {
     <aside className="fixed left-0 top-0 z-50 h-screen w-64 bg-white border-r border-gray-200 flex flex-col font-sans">
       <div className="h-20 px-6 flex items-center border-b border-gray-200">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">
-            Digifine Academy
-          </h1>
-          <p className="text-xs text-gray-500 mt-1">
+          {/* Logo Image */}
+  <img 
+    src="/images/digi-logo.webp"
+    alt="Digifine Academy Logo" 
+    className="h-8 w-auto object-contain ml-7" 
+  />
+          {/* <h2 className="text-xs text-black-500 mt-3">
             Admin Panel
-          </p>
+          </h2> */}
         </div>
       </div>
 
@@ -40,7 +43,7 @@ export default function AdminSidebar({ handleLogout }) {
               : "text-gray-700 hover:bg-gray-100"
           }`}
         >
-          <span>💼</span>
+          <span>📁</span>
           Career Applications
         </button>
 
@@ -54,6 +57,30 @@ export default function AdminSidebar({ handleLogout }) {
         >
           <span>💼</span>
           Manage Jobs
+        </button>
+
+        <button
+          onClick={() => router.push("/admin/hire-from-us")} // Yahan careers page ka URL daalo
+          className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-left cursor-pointer transition-all ${
+            pathname === "/admin/hire-from-us"
+              ? "bg-[#046AED] text-white shadow-md shadow-blue-500/20"
+              : "text-gray-700 hover:bg-gray-100"
+          }`}
+        >
+          <span>📜</span>
+          Hire From Us
+        </button>
+
+        <button
+          onClick={() => router.push("/admin/refrerals")} // Yahan refrerals page ka URL daalo
+          className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-left cursor-pointer transition-all ${
+            pathname === "/admin/refrerals"
+              ? "bg-[#046AED] text-white shadow-md shadow-blue-500/20"
+              : "text-gray-700 hover:bg-gray-100"
+          }`}
+        >
+          <span>🧑🏻‍🦰</span>
+          Refrerals
         </button>
 
       </nav>
